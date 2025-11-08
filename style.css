@@ -1,0 +1,82 @@
+:root {
+  --bg: #fdf2f8; /* pink-50 */
+  --primary: #ec4899; /* pink-500 */
+  --accent: #8b5cf6; /* violet-500 */
+  --text: #1f2937; /* gray-800 */
+  --radius: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.wrap { width: min(1100px, 92%); margin: 0 auto; }
+
+.site-header {
+  background: var(--primary);
+  color: white;
+  padding: 1rem;
+}
+.site-header .wrap {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.logo { font-size: 1.5rem; font-weight: 800; }
+
+nav ul { list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0; }
+nav a { color: white; text-decoration: none; font-weight: 600; }
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+}
+.hero h2 { font-size: 2rem; margin-bottom: 1rem; }
+
+.btn {
+  background: white;
+  color: var(--primary);
+  border: none;
+  padding: .75rem 1.25rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn.sparkle { position: relative; overflow: hidden; }
+.btn.sparkle::after {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,.4), transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(255,255,255,.3), transparent 40%);
+  mix-blend-mode: screen;
+}
+
+.programs, .community, .contact {
+  padding: 2rem 1rem;
+}
+.card-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;
+}
+.card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
+
+.highlights { list-style: none; padding: 0; }
+.highlights li { margin: .5rem 0; }
+
+form { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: 1rem; }
+input[type="email"] {
+  padding: .5rem; border-radius: var(--radius); border: 1px solid #ccc;
+}
+
+.site-footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
